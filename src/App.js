@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import courseCard from "./coursrCard";
+
 function App() {
   const [ID, setID] = useState(620610819);
 
@@ -15,6 +17,18 @@ function App() {
     setID(620610819);
   }
 
+  function renderPerson() {
+    persons.map((value) => {
+      return <courseCard {...value} key={Math.random()} />;
+    });
+  }
+
+  const me = {
+    name: "TOH HOHG LENG",
+    gender: "male",
+    age: "20"
+  };
+
   const persons = [
     {
       name: "Bob",
@@ -27,6 +41,7 @@ function App() {
       age: "20"
     }
   ];
+
   return (
     <div class="ml-2">
       {/* Code me please! */}
@@ -40,20 +55,8 @@ function App() {
 
       {/* Convert me to a component! */}
       <h3 class="title is-3">Person List</h3>
-      <table class="table is-bordered mb-3">
-        <tbody>
-          <tr>
-            <th>Name</th>
-            <th>Gender</th>
-            <th>Age</th>
-          </tr>
-          <tr>
-            <td>Bob</td>
-            <td>male</td>
-            <td>50</td>
-          </tr>
-        </tbody>
-      </table>
+      <courseCard {...me} />
+      {renderPerson()}
     </div>
   );
 }
