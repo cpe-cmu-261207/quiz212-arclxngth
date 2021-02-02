@@ -1,4 +1,20 @@
+import { useState } from "react";
+
 function App() {
+  const [ID, setID] = useState(620610819);
+
+  function reduce() {
+    setID(ID - 1);
+  }
+
+  function increase() {
+    setID(ID + 1);
+  }
+
+  function reset() {
+    setID(620610819);
+  }
+
   const persons = [
     {
       name: "Bob",
@@ -16,10 +32,10 @@ function App() {
       {/* Code me please! */}
       <div class="mb-4">
         <h3 class="title is-3">ID Counter</h3>
-        <p>YOUR ID HERE</p>
-        <button>-</button>
-        <button>reset</button>
-        <button>+</button>
+        <p>{ID}</p>
+        <button onClick={reduce}>-</button>
+        <button onClick={reset}>reset</button>
+        <button onClick={increase}>+</button>
       </div>
 
       {/* Convert me to a component! */}
