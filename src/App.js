@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import courseCard from "./coursrCard";
+import CourseCard from "./coursrCard";
 
 function App() {
   const [ID, setID] = useState(620610819);
@@ -18,8 +18,8 @@ function App() {
   }
 
   function renderPerson() {
-    persons.map((value) => {
-      return <courseCard {...value} key={Math.random()} />;
+    return persons.map((value) => {
+      return <CourseCard props={value} key={Math.random()} />;
     });
   }
 
@@ -55,7 +55,7 @@ function App() {
 
       {/* Convert me to a component! */}
       <h3 class="title is-3">Person List</h3>
-      <courseCard {...me} />
+      <CourseCard props={me} />
       {renderPerson()}
     </div>
   );

@@ -1,4 +1,4 @@
-const courseCard = (props) => {
+const CourseCard = ({ props }) => {
   return (
     <>
       <table class="table is-bordered mb-3">
@@ -19,4 +19,4 @@ const courseCard = (props) => {
   );
 };
 
-export default courseCard;
+export default CourseCard;
